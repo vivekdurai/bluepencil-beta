@@ -8,14 +8,15 @@
 			</h1>
 			<p class="mt-6 text-lg text-slate-600 text-center max-w-3xl mx-auto dark:text-slate-400">
 				Use our AI powered document platform to power <span
-					class="font-mono font-medium text-sky-600 dark:text-sky-400">insights</span
-				>, <span class="font-mono font-medium text-sky-600 dark:text-sky-400">workflows</span> and
-				<span class="font-mono font-medium text-sky-600 dark:text-sky-400">dashboards</span> across your
+					class="font-mono font-medium text-sky-900 dark:text-sky-900">insights</span
+				>, <span class="font-mono font-medium text-sky-900 dark:text-sky-900">workflows</span>
+				and
+				<span class="font-mono font-medium text-sky-900 dark:text-sky-900">dashboards</span> across your
 				organization.
 			</p>
 			<div class="mt-8 sm:mt-7 flex justify-center space-x-6 text-sm">
 				<a
-					class="text-lg bg-sky-700 hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2 focus:ring-offset-slate-50 text-orange-600 border-orange-100 font-semibold h-14 px-10 rounded-md w-full flex items-center justify-center sm:w-auto py-6 dark:bg-sky-500  hover:bg-gradient-to-tr bg-gradient-to-r from-whie-300  to-white-300 border-2 border-solid  to-white-300 dark:highlight-white/20 dark:hover:bg-sky-400"
+					class="text-lg focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:ring-offset-slate-50 text-orange-600 border-orange-200 font-semibold h-14 px-10 rounded-md w-full flex items-center justify-center sm:w-auto py-6  hover:bg-gradient-to-tr bg-gradient-to-r from-transparent  to-transparent border-2 border-solid  to-white-300 dark:highlight-white/20 dark:hover:border-black-300 dark:hover:bg-orange-100"
 					href="/docs/installation">Schedule a call</a
 				>
 			</div>
