@@ -12,6 +12,9 @@ const config = {
 	],
 
 	kit: {
+		methodOverride: {
+			allowed: ['POST', 'PUT', 'PATCH', 'DELETE']
+		},
 		adapter: adapter()
 	}
 };

@@ -8,6 +8,9 @@ const config = {
 			}
 		}
 	},
+	variants: {
+		display: ['responsive', 'group-hover', 'group-focus']
+	},
 
 	plugins: []
 };

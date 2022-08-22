@@ -1,25 +1,36 @@
 <script>
-	import Nav from '../lib/Nav.svelte/';
-	import Hero from '../lib/Hero.svelte';
+	import userStore from '$lib/user.js';
+	import Nav from '$lib/Nav.svelte/';
+	import Hero from '$lib/Hero.svelte';
+	import Button from '$lib/Button.svelte';
+	import { obp } from '$lib/stores.js';
+	import DefaultLanding from '$lib/DefaultLanding.svelte';
+	import LoggedInHome from '$lib/LoggedInHome.svelte';
+	import Sidebar from '$lib/Sidebar';
+	import Documents from '$lib/Documents.svelte';
+	import DropDown from '$lib/DropDown.svelte';
+	import Error from './__error.svelte';
+	import FileUploader from '$lib/FileUploader.svelte';
+	import Footer from '$lib/Footer.svelte';
+	import {sidebarConfig} from '$lib/Sidebar/config.js'
+
+	// Local state containing the active route in the app.
+	let pathname = `${window.location.pathname}${window.location.hash}`;
+
+	let useDarkTheme = null;
+
 </script>
 
 <svelte:head>
-	<title>OneBigPicture: Powering Document Intelligence across your organization</title>
+	<title>{$obp.company.title}: {$obp.company.description}</title>
 </svelte:head>
-
-<Nav />
-<div class="mb-20 space-y-20 overflow-hidden sm:mb-32 sm:space-y-32 md:mb-40 md:space-y-40">
-	<Hero />
-	<div
-		class="pt-10 mb-10 space-y-10 overflow-hidden sm:pt-12 sm:mb-12 sm:space-y-32 md:pt-10 md:mb-10 md:space-y-10"
-	>
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-			<h2 class="mt-8 font-semibold text-indigo-500 dark:text-indigo-400">Developer-first</h2>
-			<p
-				class="mt-4 text-3xl sm:text-4xl text-slate-900 font-extrabold tracking-tight dark:text-black-50 "
-			>
-				An API for your Documents.
-			</p>
+{#if !$userStore}
+	<DefaultLanding {obp} />
+{:else}
+	<div class="flex">
+		<Sidebar {...sidebarConfig} />
+		<div class="flex flex-wrap flex-grow flex-shrink-1 basis-40 overflow-y-auto ">
+			<LoggedInHome {userStore} />
 		</div>
 	</div>
-</div>
+{/if}
