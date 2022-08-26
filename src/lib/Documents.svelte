@@ -11,14 +11,24 @@
 		faFileText,
 		faFileCode
 	} from '@fortawesome/free-solid-svg-icons';
+
+  import TimeAgo from '$lib/TimeAgo.svelte';
+import Doc from './Doc.svelte';
 	let message;
 	let messages = [];
 
 	const ws_document_url =
 		ws_base_url + '/documents/realtime?token=' + localStorage.getItem('token');
-	const addToDocuments = (document) => {
+	
+    const addToDocuments = (document) => {
 		$documentStore = [...$documentStore, document];
 	};
+
+  const updateDocuments = (document) => {
+    console.log(document.id)
+    $documentStore = $documentStore.filter(doc => doc.id !== document.id);
+    $documentStore = [...$documentStore, document];
+   	};
 
 	async function getDocuments() {
 		const response = await api.get(`documents/`, localStorage.getItem('token'));
@@ -37,9 +47,13 @@
 
 		// Listen for messages
 		socket.addEventListener('message', function (event) {
-			let row = JSON.parse(event.data).data;
-			console.log('row', row);
-			addToDocuments(row);
+			let row = JSON.parse(event.data);
+			console.log('row', row, row.action);
+      if (row.action == 'addfile'){
+        console.log('row after', row)
+			addToDocuments(row);} 
+      if (row.action == 'updatefile'){
+			updateDocuments(row);} 
 		});
 
 		// documentStore.subscribe((currentMessage) => {
@@ -97,12 +111,12 @@
 						<th
 							class="px-5 py-5 border-b-1  border-gray-300 bg-white/90 text-left text-xs font-light text-gray-700 uppercase tracking-wider"
 						>
-							Parse Status
+							Added
 						</th>
 						<th
 							class="px-5 py-5 border-b-1  border-gray-300 bg-white/90 text-left text-xs font-light text-gray-700 uppercase tracking-wider"
 						>
-							Document Type
+							Status
 						</th>
 						<th class="px-5 py-5 border-1  border-gray-500 bg-white/90" />
 					</tr>
@@ -111,7 +125,7 @@
         <tbody></tbody>
         {:else}
 				<tbody class="mt-2">
-					{#each $documentStore as document, i}
+					{#each $documentStore.reverse() as document, i}
 						<tr class="even:bg-slate-100 odd:bg-slate-100 hover:bg-white border-b-1 border-gray-500 last-of-type:border-0">
 							<td class="px-5 p4 text-sm">
 								<a href="/documents/{document.id}" class="flex">
@@ -119,7 +133,7 @@
 										<Fa icon={faFilePdf} secondaryOpacity={1} class="text-slate-400 text-xl mt-2" />
 									</div>
 									<div class="ml-3 mt-2">
-										<p class="text-sky-600 whitespace-no-wrap">
+										<p class="text-sky-600 break-all whitespace-no-wrap">
 											{document.filename}
 										</p>
 									</div>
@@ -136,19 +150,52 @@
 							</td>
 							<td class="px-5 py-4 bg-transparent text-sm">
 								<span
-									class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight"
+									class="relative inline-block px-3 py-1 font-normal leading-tight"
 								>
-									<span aria-hidden class="absolute inset-0 bg-green-200 opacity-50 rounded-full" />
-									<span class="relative">processing</span>
-								</span>
+                <p class="text-gray-500 whitespace-no-wrap">
+									<TimeAgo src={document.created_at} /> 
+								</p>
 							</td>
-							<td class="px-5 py-4 bg-transparent text-sm">
-								<span
-									class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight"
+							<td class="px-5 py-4 w-48 bg-transparent text-sm">
+                {#if document.images_extracted == true }
+                  {#if document.ocr_complete == true }
+                    {#if document.ner_complete == true}
+                    Parse complete
+                    {:else}
+                    <span
+                    class="relative inline-block px-2 py-0 font-semibold text-slate-300 leading-tight"
+                  >
+                  <span class="flex rounded-full h-1 w-3">
+                    <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-sky-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-300"></span>
+                  </span>
+                  </span> 
+                  <span class="text-slate-400 text-xs align-top">Extracting Information</span> 
+               
+                    {/if}
+                  {:else}
+                  <span
+									class="relative inline-block px-2 py-0 font-semibold text-slate-300 leading-tight"
 								>
-									<span aria-hidden class="absolute inset-0 bg-green-200 opacity-50 rounded-full" />
-									<span class="relative">Contract</span>
-								</span>
+                <span class="flex rounded-full h-1 w-3">
+                  <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-sky-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-300"></span>
+                </span>
+								</span> 
+                <span class="text-slate-400 text-xs align-top">Recognizing Text</span> 
+                  {/if}
+
+                {:else}
+								<span
+									class="relative inline-block px-2 py-0 font-semibold text-slate-300 leading-tight"
+								>
+                <span class="flex rounded-full h-1 w-3">
+                  <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-sky-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-300"></span>
+                </span>
+								</span> 
+                <span class="text-slate-400 text-xs align-top">Converting</span> 
+                {/if}
 							</td>
 							<td class="px-5 py-4 bg-transparent text-sm text-right">
 								<button type="button" class="inline-block text-gray-500 hover:text-gray-700">

@@ -24,7 +24,10 @@
 			return { props: { user: null } };
 		}
 		const res = await api.get('users/me', localStorage.getItem('token'));
-			if (!res.errors){
+			if (res.detail=='Unauthorized'){
+				loading = false;
+				goto('/login')
+			} else {
 				console.log(res)
 					loading = false;
 					$userStore = res;

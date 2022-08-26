@@ -16,7 +16,7 @@ declare namespace App {
 		is_superuser: boolean;
 	}
 }
-
+declare module 'luxon';
 declare module '@fortawesome/pro-solid-svg-icons/index.es' {
 	export * from '@fortawesome/pro-solid-svg-icons';
   }

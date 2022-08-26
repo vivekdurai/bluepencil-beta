@@ -29,31 +29,31 @@
 		// 	$activeDocumentStore={'pages':[]};
 		// }
 		getDocument();
-		const socket = new WebSocket(ws_document_url);
+		// const socket = new WebSocket(ws_document_url);
 
 		// Connection opened
-		socket.addEventListener('open', function (event) {
-			console.log("It's open");
-		});
+		// socket.addEventListener('open', function (event) {
+		// 	console.log("It's open");
+		// });
 
 		// Listen for messages
-		socket.addEventListener('message', function (event) {
-			let row = JSON.parse(event.data).data;
-			console.log('row', row);
-		});
+		// socket.addEventListener('message', function (event) {
+		// 	let row = JSON.parse(event.data).data;
+		// 	console.log('row', row);
+		// });
 
-		const sendDocumentMessage = (message) => {
-			if (socket.readyState <= 1) {
-				socket.send(message);
-			}
-		};
+		// const sendDocumentMessage = (message) => {
+		// 	if (socket.readyState <= 1) {
+		// 		socket.send(message);
+		// 	}
+		// };
 
-		function onSendMessage() {
-			if (message.length > 0) {
-				sendDocumentMessage(message);
-				message = '';
-			}
-		}
+		// function onSendMessage() {
+		// 	if (message.length > 0) {
+		// 		sendDocumentMessage(message);
+		// 		message = '';
+		// 	}
+		// }
 	});
 </script>
 

@@ -9,9 +9,9 @@ export const obp = writable({
 		description: 'Powering Contract Intelligence across your organization'
 	},
 	hero: {
-		headline: 'We make contracts human',
+		headline: 'Sentient Contracts',
 		description:
-			'By simplifying contracts, we make it easy for you to accelerate sales, buying and hiring across your organization',
+			'By getting your contracts to talk to you, we help accelerate your sales, buying and hiring cycles.',
 		call_to_action: 'Schedule a call'
 	},
 	navigation: {
