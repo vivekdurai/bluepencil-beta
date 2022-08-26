@@ -9,9 +9,9 @@ export const obp = writable({
 		description: 'Powering Contract Intelligence across your organization'
 	},
 	hero: {
-		headline: 'Sentient Contracts',
+		headline: 'Accelerate Contracts',
 		description:
-			'By getting your contracts to talk to you, we help accelerate your sales, buying and hiring cycles.',
+			'By introducing AI powered document intelligence to understand your contracts, we help accelerate your sales, buying and hiring cycles.',
 		call_to_action: 'Schedule a call'
 	},
 	navigation: {
