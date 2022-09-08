@@ -10,8 +10,7 @@ export const obp = writable({
 	},
 	hero: {
 		headline: 'Accelerate Contracts',
-		description:
-			'By introducing AI powered document intelligence to understand your contracts, we help accelerate your sales, buying and hiring cycles.',
+		description: 'AI powered document intelligence to understand your contracts, so we help accelerate your sales, buying and hiring cycles.',
 		call_to_action: 'Schedule a call'
 	},
 	navigation: {

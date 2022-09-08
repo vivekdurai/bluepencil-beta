@@ -5,6 +5,7 @@
 	import * as api from '$lib/api';
 	import { ws_base_url } from '$lib/stores';
 	import Page from '$lib/Page.svelte';
+	import TimeAgo from '$lib/TimeAgo.svelte';
 	let message;
 	let pages = [];
 	let messages = [];
@@ -59,9 +60,9 @@
 
 <div
 	class="h-screen flex">
-	<div class="flex-1 flex overflow-hidden bg-slate-300">
-		<div class="flex-1 overflow-y-scroll  py-10">
-			<div class="max-w-8xl mx-auto">
+	<div class="flex overflow-hidden bg-slate-500/20">
+		<div class="flex overflow-y-scroll py-10">
+			<div class="flex flex-1 flex-col">
 			{#if pages}
 				{#each pages as page}
 					<div filename="{$activeDocumentStore.filename}" page={page.id} class="">
@@ -70,18 +71,25 @@
 				{/each}
 			{/if}
 			</div>
+			<div
+			class="flex top-0 right-0 bottom-0 w-3/12 p-10 py-4"></div>
 		</div>
-	</div>
-	<div
-		class="w-3/12 bg-white p-10 py-4">
+		<div
+		class="fixed break-all top-0 right-0 bottom-0 w-3/12 bg-slate-400/20 p-10 py-4">
 		{#if $activeDocumentStore.filename}
-			<div class="">
-				{$activeDocumentStore.filename}
+			<div class="bg-white/20 p-5 mt-5 rounded-sm">
+				<div class="text-lg font-bold min-w-full">
+					{$activeDocumentStore.filename}
+				</div>
+				<div class="min-w-full">
+					<div>Added <TimeAgo src={$activeDocumentStore.created_at} /></div>
+					<div>{$activeDocumentStore.content_type}</div>
+					<div>{$activeDocumentStore.size}</div>
+				</div>
 			</div>
-			<div>{$activeDocumentStore.created_at}</div>
-			<div>{$activeDocumentStore.content_type}</div>
-			<div>{$activeDocumentStore.size}</div>
 		{/if}
+	</div>	
 	</div>
+
 
 </div>

@@ -1,4 +1,5 @@
-export const base = 'http://localhost:8004';
+import { variables } from '$lib/variables';
+export const base = variables.basePath;
 
 async function send({ method, path, data, token }) {
 	console.log('send', method, path, data, token);
