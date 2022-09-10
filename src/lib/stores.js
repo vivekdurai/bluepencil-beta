@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
-
-export const base_url = 'http://localhost:8004';
-export const ws_base_url = 'ws://localhost:8004';
+import { variables } from '$lib/variables';
+export const base_url = variables.basePath;
+export const ws_base_url = variables.wsPath;
 
 export const obp = writable({
 	company: {
@@ -10,7 +10,8 @@ export const obp = writable({
 	},
 	hero: {
 		headline: 'Accelerate Contracts',
-		description: 'AI powered document intelligence to understand your contracts, so we help accelerate your sales, buying and hiring cycles.',
+		description:
+			'AI powered document intelligence to understand your contracts, so we help accelerate your sales, buying and hiring cycles.',
 		call_to_action: 'Schedule a call'
 	},
 	navigation: {
