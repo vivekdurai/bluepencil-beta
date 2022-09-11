@@ -2,7 +2,8 @@
 	import { onMount } from 'svelte';
 	import { documentStore } from '$lib/stores';
 	import * as api from '$lib/api';
-	import { ws_base_url } from '$lib/stores';
+	import { variables } from '$lib/variables';
+	export const ws_base_url = variables.wsPath;
 	import Fa from 'svelte-fa';
 	import {
 		faFilePdf,
