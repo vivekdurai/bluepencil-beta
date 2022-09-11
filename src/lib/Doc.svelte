@@ -3,7 +3,9 @@
 	import { onMount } from 'svelte';
 	import { activeDocumentStore } from '$lib/stores';
 	import * as api from '$lib/api';
-	import { ws_base_url } from '$lib/stores';
+	import { variables } from '$lib/variables';
+	export const ws_base_url = variables.wsPath;
+
 	import Page from '$lib/Page.svelte';
 	import TimeAgo from '$lib/TimeAgo.svelte';
 	let message;
