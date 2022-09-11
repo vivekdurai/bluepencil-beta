@@ -3,6 +3,7 @@
 	import { base } from '$lib/api';
 	// const upload_url = base + '/documents';
 	import { variables } from '$lib/variables';
+	console.log('fileuploader upload_ path is', variables.basePath)
 	export const upload_url = variables.basePath+ '/documents';
 
     const token = localStorage.getItem('token');

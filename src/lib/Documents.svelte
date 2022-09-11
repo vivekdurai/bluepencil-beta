@@ -3,6 +3,7 @@
 	import { documentStore } from '$lib/stores';
 	import * as api from '$lib/api';
 	import { variables } from '$lib/variables';
+	export const base_url = variables.basePath;
 	export const ws_base_url = variables.wsPath;
 	import Fa from 'svelte-fa';
 	import {
