@@ -1,10 +1,10 @@
 <script>
 	import FilePond, { registerPlugin, supported } from 'svelte-filepond';
-	import { base } from '$lib/api';
+	// import { base } from '$lib/api';
 	// const upload_url = base + '/documents';
 	import { variables } from '$lib/variables';
 	console.log('fileuploader upload_ path is', variables.basePath)
-	export const upload_url = variables.basePath+ '/documents';
+	export const upload_url = variables.basePath+ '/documents/';
 
     const token = localStorage.getItem('token');
     const serveroptions = {
