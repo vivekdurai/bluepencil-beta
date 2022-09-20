@@ -3,7 +3,7 @@
 </script>
 
 <div class="py-12 sm:px-6 md:px-8">
-	<div class="relative flex md:max-wmax-w mx-auto pt-24 sm:pt-24 lg:pt-32">
+	<div class="relative flex md:max-w mx-auto pt-24 sm:pt-24 lg:pt-32">
 		<div class="lg:flex md:align-left lg:align-left sm:w-full md:w-full">
 			<div class="align-left w-[400px] md:mb-40 sm:mb-40">		
 				<svg width="227" height="103" viewBox="0 0 227 103" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,11 +38,13 @@
 			<div class="mt-4 sm:mt-4 flex text-left space-x-2 text-sm">
 				<a
 					class="text-md focus:outline-none focus:ring-2 focus:ring-sky-400 
-					focus:ring-offset-2 focus:ring-offset-slate-50 bg-green-200
-					 text-green-900
+					focus:ring-offset-2 focus:ring-offset-slate-50 bg-white
+					 text-purple-700
+					 border-purple-400 border
+					 shadow-md
 					 font-semibold 
 					 px-8
-					 rounded-md
+					 rounded-sm
 					 w-full 
 					 flex 
 					 items-center 
@@ -54,11 +56,13 @@
 				>
 				<a
 					class="text-md focus:outline-none focus:ring-2 focus:ring-sky-400 
-					focus:ring-offset-2 focus:ring-offset-slate-50 bg-slate-200
+					focus:ring-offset-2 focus:ring-offset-slate-50 bg-white
 					 text-slate-900
 					 font-semibold 
+					 shadow-md
 					 px-8
-					 rounded-md
+					 border border-slate-300
+					 rounded-sm
 					 w-full 
 					 flex 
 					 items-center 
@@ -71,7 +75,7 @@
 
 			</div>
 		</div>
-			<div class="lg:flex sm:hidden md:flex bg-sky-900/10 lg:p-10 p-4 mt-10  lg:ml-20 lg:-mt-20 lg:flex-grow">
+			<div class="lg:flex sm:hidden md:flex bg-sky-100/0 lg:p-10 p-4 mt-10  lg:ml-20 lg:-mt-20 lg:flex-grow">
 				<div class="">				
 					<img alt="contract preview" src="doc.png" />
 			</div>
