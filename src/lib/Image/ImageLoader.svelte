@@ -9,6 +9,7 @@
     }
     })
 	export let url;
+    export let page;
 	export let alt;
 
 	import IntersectionObserver from './IntersectionObserver.svelte';
@@ -17,6 +18,6 @@
 
 <IntersectionObserver once={true} let:intersecting>
 	{#if intersecting || nativeLoading}
-		<Image {alt} {url} />
+		<Image {page} {alt} {url} />
 	{/if}
 </IntersectionObserver>

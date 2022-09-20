@@ -51,7 +51,7 @@
 			bind:this={pond}
 			{name}
 			server={serveroptions}
-			acceptedFileTypes={['application/pdf', 'application/msword', 'text/html', 'text/plain']}
+			acceptedFileTypes={['application/pdf', 'application/msword', 'text/html', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'text/plain']}
 			allowRevert={false}
 			maxParallelUploads={28}
 			instantUpload={true}

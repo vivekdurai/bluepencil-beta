@@ -6,10 +6,8 @@
 	import { obp } from '$lib/stores.js';
 	import DefaultLanding from '$lib/DefaultLanding.svelte';
 	import LoggedInHome from '$lib/LoggedInHome.svelte';
-	import Sidebar from '$lib/Sidebar';
     import Documents from '$lib/Documents.svelte';
     import Error from '../__error.svelte';
-    import {sidebarConfig} from '$lib/Sidebar/config.js'
     import LoggedInDocuments from '$lib/LoggedInDocuments.svelte';
     import RedirectifNotLoggedIn from '$lib/RedirectifNotLoggedIn.svelte';
 
@@ -27,7 +25,6 @@
 <RedirectifNotLoggedIn {$userStore} />
 
 <div class="flex">
-    <Sidebar {...sidebarConfig} />
     <div class="flex flex-wrap flex-grow flex-shrink-1 basis-40 overflow-y-auto">
         <LoggedInDocuments {$userStore} />
     </div>

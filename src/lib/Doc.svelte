@@ -5,7 +5,7 @@
 	import * as api from '$lib/api';
 	import { variables } from '$lib/variables';
 	export const ws_base_url = variables.wsPath;
-
+	import _ from 'lodash';
 	import Page from '$lib/Page.svelte';
 	import TimeAgo from '$lib/TimeAgo.svelte';
 	let message;
@@ -14,9 +14,9 @@
 	console.log(params);
 	const ws_document_url =
 		ws_base_url +
-		'/document/realtime?document=' +
+		'/documents/realtime/' +
 		params.document +
-		'&token=' +
+		'?token=' +
 		localStorage.getItem('token');
 
 	async function getDocument() {
@@ -32,12 +32,12 @@
 		// 	$activeDocumentStore={'pages':[]};
 		// }
 		getDocument();
-		// const socket = new WebSocket(ws_document_url);
+		const socket = new WebSocket(ws_document_url);
 
 		// Connection opened
-		// socket.addEventListener('open', function (event) {
-		// 	console.log("It's open");
-		// });
+		socket.addEventListener('open', function (event) {
+			console.log("Document "+params.document+" It's open");
+		});
 
 		// Listen for messages
 		// socket.addEventListener('message', function (event) {
@@ -61,36 +61,42 @@
 </script>
 
 <div
-	class="h-screen flex">
-	<div class="flex overflow-hidden bg-slate-500/20">
-		<div class="flex overflow-y-scroll py-10">
-			<div class="flex flex-1 flex-col">
-			{#if pages}
-				{#each pages as page}
-					<div filename="{$activeDocumentStore.filename}" page={page.id} class="">
-						<Page {page} document={$activeDocumentStore} />
-					</div>
-				{/each}
-			{/if}
-			</div>
-			<div
-			class="flex top-0 right-0 bottom-0 w-3/12 p-10 py-4"></div>
-		</div>
+	class="h-screen flex bg-slate-400/20">
+	<div class="absolute overflow-hidden">
 		<div
-		class="fixed break-all top-0 right-0 bottom-0 w-3/12 bg-slate-400/20 p-10 py-4">
+		class="fixed break-all top-12 left-[70px] bottom-0 w-[180px]  bg-slate-100/20 rounded-sm m-2 mt-4 p-4 py-0">
 		{#if $activeDocumentStore.filename}
-			<div class="bg-white/20 p-5 mt-5 rounded-sm">
-				<div class="text-lg font-bold min-w-full">
+			<div class="p-0 mt-0 rounded-sm">
+				<div class="text-sm tracking-tight font-bold">
 					{$activeDocumentStore.filename}
 				</div>
-				<div class="min-w-full">
+				<div class="mt-2 min-w-full text-xs">
 					<div>Added <TimeAgo src={$activeDocumentStore.created_at} /></div>
 					<div>{$activeDocumentStore.content_type}</div>
 					<div>{$activeDocumentStore.size}</div>
 				</div>
 			</div>
 		{/if}
-	</div>	
+		</div>
+		<div
+		class="fixed break-all overflow-y-scroll  top-0 left-[270px] border bg-slate-300/20 border-slate-200 bg-slate-50 right-64 bottom-0 mt-4 px-3">
+
+			<div class="flex py-4">
+				<div class="flex flex-1 flex-col">
+				{#if pages}
+					{#each _.orderBy(pages, ['number'], ['asc']) as page, index}
+						<div filename="{$activeDocumentStore.filename}" page={page.id} class="">
+							<Page page={page}  document={$activeDocumentStore} />
+						</div>
+					{/each}
+				{/if}
+				</div>
+			</div>
+		</div>
+		<div
+		class="fixed break-all top-10 border border-slate-200 right-0 bottom-0 w-60  bg-white m-2 mt-4 p-4 py-0">
+		
+		</div>
 	</div>
 
 

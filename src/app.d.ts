@@ -17,6 +17,9 @@ declare namespace App {
 	}
 }
 declare module 'luxon';
+declare module 'svelte-selecto';
+declare module 'selecto';
+declare module 'moveable';
 declare module 'cross-blob';
 declare module '@fortawesome/pro-solid-svg-icons/index.es' {
 	export * from '@fortawesome/pro-solid-svg-icons';

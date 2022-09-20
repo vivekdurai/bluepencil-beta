@@ -35,7 +35,7 @@
 			}
 	});
 
-
+	console.log(userStore);
 </script>
 
 
@@ -47,7 +47,11 @@
 {/if}
 <PageTransition {url}>
 	{#if !loading}
+	{#if userStore}
 		<slot {userStore} />
+	{:else}
+		<slot {userStore} />
+	{/if}
 	{/if}
 </PageTransition>
 {#if !loading}
