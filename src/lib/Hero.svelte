@@ -2,10 +2,10 @@
 	export let hero;
 </script>
 
-<div class="px-4 py-20 h-screen sm:px-6 md:px-8">
-	<div class="relative flex max-w-6xl mx-auto pt-24 sm:pt-24 lg:pt-32">
-		<div class="flex">
-			<div class="text-center w-[400px] mx-auto">		
+<div class="py-12 sm:px-6 md:px-8">
+	<div class="relative flex md:max-wmax-w mx-auto pt-24 sm:pt-24 lg:pt-32">
+		<div class="lg:flex md:align-left lg:align-left sm:w-full md:w-full">
+			<div class="align-left w-[400px] md:mb-40 sm:mb-40">		
 				<svg class="-ml-2" width="225" height="100" viewBox="0 0 225 100" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M82.1114 7.36401L82.1115 7.36391L82.1214 7.3674C87.5672 9.28327 91.0855 13.0609 92.6408 18.6571C94.1735 24.0298 94.9271 33.4717 94.9271 46.9283C94.9271 60.2438 94.1733 69.6144 92.6403 74.9865C91.0832 80.4436 87.5621 84.1458 82.1214 86.0598L82.1214 86.0599L82.1114 86.0632C76.36 87.9517 66.652 88.8803 53.0439 88.8803C39.0681 88.8803 29.3533 87.9534 23.9714 86.0616C18.1631 84.1531 14.4416 80.4574 12.8805 74.9865C11.3476 69.6144 10.5938 60.2438 10.5938 46.9283C10.5938 33.472 11.3474 24.0303 12.88 18.6575C14.4396 13.0456 18.1598 9.27388 23.9763 7.36401C29.7278 5.47552 39.4357 4.54694 53.0439 4.54694C66.652 4.54694 76.36 5.47552 82.1114 7.36401Z" fill="white" stroke="black"/>
 					<path d="M146.611 37.595C146.611 29.7342 146.326 24.1519 145.757 20.8481C145.301 17.4304 144.276 15.2089 142.681 14.1836C141.2 13.0443 138.75 12.4747 135.333 12.4747C131.459 12.4747 128.668 13.557 126.959 15.7215C125.25 17.8861 124.168 21.019 123.713 25.1203C123.371 29.1076 123.2 35.4874 123.2 44.2595V88.5191H109.529V1.36709H122.004L122.687 12.9874H123.713C125.991 4.32913 131.972 0 141.656 0C147.01 0 150.997 1.08228 153.618 3.24684C156.238 5.29747 158.004 8.54432 158.915 12.9874C159.826 17.3165 160.282 23.6393 160.282 31.9557V88.5191H146.611V37.595Z" fill="black"/>
@@ -33,17 +33,17 @@
 			>
 				{hero.headline}
 			</h1>
-			<p class="mt-6 text-sm text-slate-500 font-normal text-left mr-10">
+			<p class="mt-3 text-sm text-slate-500 font-normal text-left mr-10">
 				{hero.description}
 			</p>
-			<div class="mt-8 sm:mt-7 flex text-left space-x-6 text-sm">
+			<div class="mt-4 sm:mt-4 flex text-left space-x-2 text-sm">
 				<a
-					class="text-base focus:outline-none focus:ring-2 focus:ring-sky-400 
-					focus:ring-offset-2 focus:ring-offset-slate-50 bg-blue-500
-					 text-white
+					class="text-md focus:outline-none focus:ring-2 focus:ring-sky-400 
+					focus:ring-offset-2 focus:ring-offset-slate-50 bg-green-200
+					 text-green-900
 					 font-semibold 
 					 px-8
-					 rounded-md 
+					 rounded-md
 					 w-full 
 					 flex 
 					 items-center 
@@ -51,18 +51,30 @@
 					hover:bg-blue-200
 					hover:text-white
 					"
-					href="/">{hero.call_to_action}</a
+					href="/">Get Started</a
+				>
+				<a
+					class="text-md focus:outline-none focus:ring-2 focus:ring-sky-400 
+					focus:ring-offset-2 focus:ring-offset-slate-50 bg-slate-200
+					 text-slate-900
+					 font-semibold 
+					 px-8
+					 rounded-md
+					 w-full 
+					 flex 
+					 items-center 
+					 justify-center sm:w-auto py-3  border-1
+					hover:bg-blue-200
+					hover:text-white
+					"
+					href="/">Schedule a call</a
 				>
 
 			</div>
 		</div>
-			<div class="flex-auto ">
-				<div class="p-10 bg-sky-900/10 ml-20 -mt-20 flex-grow ">
-				
+			<div class="lg:flex sm:hidden md:flex bg-sky-900/10 lg:p-10 p-4 mt-10  lg:ml-20 lg:-mt-20 lg:flex-grow">
+				<div class="">				
 					<img alt="contract preview" src="doc.png" />
-						
-						
-						
 			</div>
 				</div>
 		</div>
