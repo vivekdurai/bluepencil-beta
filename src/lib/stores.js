@@ -19,34 +19,34 @@ export const obp = writable({
 			{
 				title: 'Product',
 				items: [
-					{ title: 'One Contract', path: '/ ' },
-					{ title: 'One Finance', path: '/ ' },
-					{ title: 'One Resume', path: '/ ' },
-					{ title: 'One Text', path: '/ ' }
+					{ icon: 'faFileLines', title: 'One Contract', path: '/ ', help: 'dadasdasd' },
+					{ icon: 'faFileLines', title: 'One Finance', path: '/ ', help: 'dsadsaddsad' },
+					{ icon: 'faFileLines', title: 'One Resume', path: '/ ', help: 'dsadsda' },
+					{ icon: 'faFileLines', title: 'One Text', path: '/ ', help: 'dasdadasd' }
 				]
 			},
 			{
 				title: 'Solutions',
 				items: [
-					{ title: 'Sales teams', path: '/ ' },
-					{ title: 'Finance teams', path: '/ ' },
-					{ title: 'Legal teams', path: '/ ' },
-					{ title: 'Procurement teams', path: '/ ' },
-					{ title: 'HR teams', path: '/ ' }
+					{ icon: 'faFileLines', title: 'Sales teams', path: '/ ', help: 'dasdadasd' },
+					{ icon: 'faFileLines', title: 'Finance teams', path: '/ ', help: 'dasdadasd' },
+					{ icon: 'faFileLines', title: 'Legal teams', path: '/ ', help: 'dasdadasd' },
+					{ icon: 'faFileLines', title: 'Procurement teams', path: '/ ', help: 'dasdadasd' },
+					{ icon: 'faFileLines', title: 'HR teams', path: '/ ', help: 'dasdadasd' }
 				]
 			},
 			{
 				title: 'Resources',
 				items: [
-					{ title: 'API Documentation', path: '/ ' },
-					{ title: 'How-tos', path: '/ ' }
+					{ icon: 'faFileLines', title: 'API Documentation', path: '/ ', help: 'dasdadasd' },
+					{ icon: 'faFileLines', title: 'How-tos', path: '/ ', help: 'dasdadasd' }
 				]
 			},
 			{
 				title: 'About',
 				items: [
-					{ title: 'Company', path: '/ ' },
-					{ title: 'Careers', path: '/ ' }
+					{ icon: 'faFileLines', title: 'Company', path: '/ ', help: 'dasdadasd' },
+					{ icon: 'faFileLines', title: 'Careers', path: '/ ', help: 'dasdadasd' }
 				]
 			}
 		]
