@@ -1,7 +1,7 @@
 const config = {
 	content: [
-		'./src/**/*.{html,js,svelte,ts}',
-		'./node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'
+		'./src/**/*.{html,js,svelte,ts}'
+		// './node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'
 	],
 
 	theme: {
@@ -13,10 +13,8 @@ const config = {
 	},
 	variants: {
 		display: ['responsive', 'group-hover', 'group-focus']
-	},
-	plugins: [
-		require('flowbite/plugin')
-	]	
+	}
+	// plugins: [require('flowbite/plugin')]
 };
 
 module.exports = config;

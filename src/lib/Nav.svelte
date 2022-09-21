@@ -1,6 +1,5 @@
 <script>
-	// import DropDown from './DropDown.svelte';
-	// import { Dropdown, Helper, DropdownItem, DropdownDivider, DropdownHeader } from 'flowbite-svelte'
+	import DropDown from './DropDown.svelte';
 	export let props;
 	export let userStore;
 	import Fa from 'svelte-fa';
@@ -108,7 +107,7 @@
 
 {:else}
 	<div
-		class="w-full backdrop-blur bg-white/20 border-gray-200 flex-none transition-colors duration-500 lg:z-50"
+		class="fixed w-full h-18 backdrop-blur bg-white/20 border-gray-200 flex-none transition-colors duration-500 z-50"
 	>
 		<div class="max-w-8xl mx-auto">
 			<div class="py-4 border-slate-900 lg:px-8 border-0 dark:border-slate-300 mx-4 lg:mx-0">
@@ -137,31 +136,14 @@
 					<nav class="text-sm ml-4 flex-none leading-6 text-gray-600">
 						<ul class="flex space-x-8">
 								{#each props.navigation.links as link}
-									<li class="dropdown relative">
-										{#if link.items.length > 0}
-										<!-- <Dropdown class="w-60" >
-											<ul slot="content" class="p-3 space-y-1">
-											  <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-												<h3>{link.title}</h3>
-												<Helper class="pl-6">Some helpful instruction goes over here.</Helper>
-											  </DropdownItem>
-											  <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-												<Checkbox checked>Enable 2FA auth</Checkbox>
-												<Helper class="pl-6">Some helpful instruction goes over here.</Helper>
-											  </DropdownItem>
-											  <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-												<Checkbox>Subscribe newsletter</Checkbox>
-												<Helper class="pl-6">Some helpful instruction goes over here.</Helper>
-											  </DropdownItem>
-											</ul>
-										  </Dropdown> -->
-											<!-- <DropDown links={link.items} title={link.title} /> -->
+									<li>
+										{#if link.items.length > 0}								
+											<DropDown links={link.items} title={link.title} />
 										{:else}
 											<a class="font-semibold" href="{link.link}">{link.title}</a>
 										{/if}
 									</li>
 								{/each}
-
 						</ul>
 					</nav>
 					<div class="relative lg:flex ml-auto">
@@ -202,4 +184,5 @@
 			</div>
 		</div>
 	</div>
+	<div class="flex w-full h-20 mb-18"></div>
 {/if}
