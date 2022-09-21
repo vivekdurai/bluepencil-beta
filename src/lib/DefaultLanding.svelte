@@ -4,6 +4,17 @@
 </script>
 <div class="mb-20 space-y-20 overflow-hidden sm:mb-32 sm:space-y-32 md:mb-40 md:space-y-40">
 	<Hero hero={$obp.hero} />
+	<div class="bg-sky-100 rounded-lg w-full lg:p-10 p-4 mt-10 lg:-mt-20">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+			<h2 class="mt-8 font-semibold text-sky-700 dark:text-sky-400">Simple and powerful</h2>
+			<p
+				class="mt-4 mb-10 text-3xl sm:text-4xl text-slate-900 font-extrabold tracking-tight dark:text-black-50 "
+			>
+				Documents as data
+			</p>
+			<img alt="contract preview" src="doc.png" />
+		</div>
+	</div>
 	<div
 		class="pt-10 mb-10 space-y-10 overflow-hidden sm:pt-12 sm:mb-12 sm:space-y-32 md:pt-10 md:mb-10 md:space-y-10"
 	>

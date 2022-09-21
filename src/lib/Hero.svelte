@@ -2,11 +2,11 @@
 	export let hero;
 </script>
 
-<div class="py-12 sm:px-6 md:px-8">
-	<div class="relative flex md:max-w mx-auto pt-24 sm:pt-24 lg:pt-32">
-		<div class="lg:flex md:align-left lg:align-left sm:w-full md:w-full">
-			<div class="align-left w-[400px] md:mb-40 sm:mb-40">		
-				<svg width="227" height="103" viewBox="0 0 227 103" fill="none" xmlns="http://www.w3.org/2000/svg">
+<div class="py-0 sm:px-6 md:px-8">
+	<div class="relative md:max-w mx-auto pt-24 sm:pt-24 lg:pt-32">
+		<div class="w-full items-center sm:w-full md:w-full">
+			<div class="items-center text-center align-center w-full mb-40">		
+				<svg class="inline-block mb-4" width="227" height="103" viewBox="0 0 227 103" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M85.8981 6.98787L85.9371 7.00019L85.9757 7.01332C92.6819 9.28832 97.1994 13.9251 99.1471 20.6695C100.899 26.6018 101.667 36.5351 101.667 50.0188C101.667 63.3741 100.897 73.2376 99.143 79.1664C97.1807 85.7979 92.6405 90.3325 85.9757 92.5934L85.9371 92.6066L85.8981 92.6189C79.3594 94.6892 68.7854 95.6067 54.61 95.6067C40.1181 95.6067 29.4919 94.7015 23.2835 92.6067C16.3119 90.3885 11.4819 85.9071 9.48723 79.1664C7.7328 73.2376 6.96354 63.3741 6.96354 50.0188C6.96354 36.5352 7.73103 26.602 9.48314 20.6696C11.4665 13.8022 16.2868 9.21537 23.3219 6.98787C29.8607 4.91754 40.4347 4 54.61 4C68.7854 4 79.3594 4.91754 85.8981 6.98787Z" fill="white" stroke="black" stroke-width="8"/>
 					<path d="M148.945 40.595C148.945 32.7342 148.66 27.1519 148.09 23.8481C147.634 20.4304 146.609 18.2089 145.014 17.1836C143.533 16.0443 141.084 15.4747 137.666 15.4747C133.793 15.4747 131.002 16.557 129.293 18.7215C127.584 20.8861 126.502 24.019 126.046 28.1203C125.704 32.1076 125.533 38.4874 125.533 47.2596V91.5191H111.862V4.36709H124.337L125.021 15.9874H126.046C128.324 7.32913 134.305 3 143.989 3C149.343 3 153.331 4.08228 155.951 6.24684C158.571 8.29747 160.337 11.5443 161.248 15.9874C162.16 20.3165 162.615 26.6393 162.615 34.9557V91.5191H148.945V40.595Z" fill="black"/>
 					<path d="M226.979 52.2153H190.068C190.068 60.9874 190.353 67.3102 190.922 71.1837C191.606 74.9432 193.03 77.5634 195.195 79.0444C197.473 80.4115 201.176 81.0951 206.302 81.0951C211.657 81.0951 217.979 80.5254 225.271 79.3862V90.6647C222.65 91.2343 219.29 91.747 215.188 92.2027C211.087 92.6584 207.157 92.8862 203.397 92.8862C195.195 92.8862 189.214 91.5191 185.454 88.7849C181.695 85.9368 179.245 81.5507 178.106 75.6267C176.967 69.5887 176.397 60.4178 176.397 48.114C176.397 35.6963 176.853 26.5254 177.764 20.6013C178.79 14.6772 181.125 10.2912 184.771 7.44305C188.53 4.48102 194.568 3 202.885 3C210.517 3 215.986 4.3671 219.29 7.10128C222.707 9.83546 224.815 14.1076 225.612 19.9177C226.524 25.7279 226.979 35.0697 226.979 47.9431V52.2153ZM202.543 14.7912C198.669 14.7912 195.878 15.4177 194.169 16.6709C192.574 17.8102 191.492 20.2026 190.922 23.8481C190.353 27.4937 190.068 33.5886 190.068 42.133H214.163V40.0823C214.163 32.3355 213.821 26.7532 213.138 23.3355C212.568 19.8038 211.486 17.5253 209.891 16.5C208.41 15.3608 205.96 14.7912 202.543 14.7912Z" fill="black"/>
@@ -32,54 +32,51 @@
 			>
 				{hero.headline}
 			</h1>
-			<p class="mt-3 text-sm text-slate-500 font-normal text-left mr-10">
-				{hero.description}
-			</p>
-			<div class="mt-4 sm:mt-4 flex text-left space-x-2 text-sm">
+			<div class="mt-3 text-xl font-light text-slate-600 font-normal text-center mb-10">
+				<p class="mx-auto w-6/12">Accelerate sales, buying, hiring and other critical business functions with a document intelligence platform <span class="bg-yellow-100">built for humans.</span></p>
+			</div>
+			<div class="text-center align-center items-center space-x-2 text-sm">
+				<a
+				class="text-md focus:outline-none focus:ring-2 focus:ring-sky-400 
+				focus:ring-offset-2 focus:ring-offset-slate-50 bg-green-200
+				 text-green-800
+				 font-semibold
+				 px-8
+				 border border-white
+				 rounded-md
+				 items-center 
+				 justify-center 
+				 sm:w-auto 
+				 py-3
+				hover:border-green-300
+				hover:bg-green-100
+				hover:text-green-900
+				"
+				href="/">Sign up for our beta</a
+			>
+
 				<a
 					class="text-md focus:outline-none focus:ring-2 focus:ring-sky-400 
-					focus:ring-offset-2 focus:ring-offset-slate-50 bg-white
-					 text-purple-700
-					 border-purple-400 border
-					 shadow-md
+					focus:ring-offset-2 focus:ring-offset-slate-50 bg-slate-100
+					 text-black
+					 border-white border
 					 font-semibold 
 					 px-8
-					 rounded-sm
+					 rounded-md
 					 w-full 
-					 flex 
+					 
 					 items-center 
-					 justify-center sm:w-auto py-3  border-1
-					hover:bg-blue-200
-					hover:text-white
+					 justify-center sm:w-auto py-3  
+					hover:bg-slate-100
+					hover:border-slate-300
+					hover:text-slate-800
 					"
-					href="/">Get Started</a
-				>
-				<a
-					class="text-md focus:outline-none focus:ring-2 focus:ring-sky-400 
-					focus:ring-offset-2 focus:ring-offset-slate-50 bg-white
-					 text-slate-900
-					 font-semibold 
-					 shadow-md
-					 px-8
-					 border border-slate-300
-					 rounded-sm
-					 w-full 
-					 flex 
-					 items-center 
-					 justify-center sm:w-auto py-3  border-1
-					hover:bg-blue-200
-					hover:text-white
-					"
-					href="/">Schedule a call</a
+					href="/">Learn more</a
 				>
 
 			</div>
 		</div>
-			<div class="lg:flex sm:hidden md:flex bg-sky-100/0 lg:p-10 p-4 mt-10  lg:ml-20 lg:-mt-20 lg:flex-grow">
-				<div class="">				
-					<img alt="contract preview" src="doc.png" />
-			</div>
-				</div>
+
 		</div>
 
 	</div>

@@ -17,20 +17,37 @@ export const obp = writable({
 	navigation: {
 		links: [
 			{
-				title: 'Solutions',
+				title: 'Product',
 				items: [
-					{ title: 'Contracts', path: '/ ' },
-					{ title: 'Litigation', path: '/ ' },
-					{ title: 'Finance', path: '/ ' },
-					{ title: 'Governance', path: '/ ' },
-					{ title: 'Healthcare', path: '/ ' },
-					{ title: 'Real Estate', path: '/ ' }
+					{ title: 'One Contract', path: '/ ' },
+					{ title: 'One Finance', path: '/ ' },
+					{ title: 'One Resume', path: '/ ' },
+					{ title: 'One Text', path: '/ ' }
 				]
 			},
 			{
-				title: 'Documentation',
-				link: '/documentation',
-				items: []
+				title: 'Solutions',
+				items: [
+					{ title: 'Sales teams', path: '/ ' },
+					{ title: 'Finance teams', path: '/ ' },
+					{ title: 'Legal teams', path: '/ ' },
+					{ title: 'Procurement teams', path: '/ ' },
+					{ title: 'HR teams', path: '/ ' }
+				]
+			},
+			{
+				title: 'Resources',
+				items: [
+					{ title: 'API Documentation', path: '/ ' },
+					{ title: 'How-tos', path: '/ ' }
+				]
+			},
+			{
+				title: 'About',
+				items: [
+					{ title: 'Company', path: '/ ' },
+					{ title: 'Careers', path: '/ ' }
+				]
 			}
 		]
 	}

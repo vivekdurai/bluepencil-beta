@@ -9,7 +9,7 @@
 		<div class="flex">
 			<div class="flex-none w-1/2 space-y-10 sm:space-y-8 lg:flex lg:space-y-0">
 				<div class="lg:flex-none lg:w-1/2">
-					<h2 class="font-semibold text-slate-900 dark:text-slate-100">Getting Started</h2>
+					<h2 class="font-semibold text-slate-900 dark:text-slate-100">Solutions</h2>
 					<ul class="mt-3 space-y-2">
 						<li>
 							<a class="hover:text-slate-900 dark:hover:text-slate-300" href="/docs/installation"
@@ -46,7 +46,7 @@
 					</ul>
 				</div>
 				<div class="lg:flex-none lg:w-1/2">
-					<h2 class="font-semibold text-slate-900 dark:text-slate-100">Core Concepts</h2>
+					<h2 class="font-semibold text-slate-900 dark:text-slate-100">Resources</h2>
 					<ul class="mt-3 space-y-2">
 						<li>
 							<a class="hover:text-slate-900 dark:hover:text-slate-300" href="/docs/utility-first"
@@ -92,7 +92,7 @@
 			</div>
 			<div class="flex-none w-1/2 space-y-10 sm:space-y-8 lg:flex lg:space-y-0">
 				<div class="lg:flex-none lg:w-1/2">
-					<h2 class="font-semibold text-slate-900 dark:text-slate-100">Customization</h2>
+					<h2 class="font-semibold text-slate-900 dark:text-slate-100">Company</h2>
 					<ul class="mt-3 space-y-2">
 						<li>
 							<a class="hover:text-slate-900 dark:hover:text-slate-300" href="/docs/configuration"
@@ -140,7 +140,7 @@
 					</ul>
 				</div>
 				<div class="lg:flex-none lg:w-1/2">
-					<h2 class="font-semibold text-slate-900 dark:text-slate-100">Community</h2>
+					<h2 class="font-semibold text-slate-900 dark:text-slate-100">Get in Touch</h2>
 					<ul class="mt-3 space-y-2">
 						<li>
 							<a
