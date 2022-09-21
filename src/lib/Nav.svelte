@@ -1,5 +1,6 @@
 <script>
-	import DropDown from './DropDown.svelte';
+	// import DropDown from './DropDown.svelte';
+	// import { Dropdown, Helper, DropdownItem, DropdownDivider, DropdownHeader } from 'flowbite-svelte'
 	export let props;
 	export let userStore;
 	import Fa from 'svelte-fa';
@@ -138,7 +139,23 @@
 								{#each props.navigation.links as link}
 									<li class="dropdown relative">
 										{#if link.items.length > 0}
-											<DropDown links={link.items} title={link.title} />
+										<!-- <Dropdown class="w-60" >
+											<ul slot="content" class="p-3 space-y-1">
+											  <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+												<h3>{link.title}</h3>
+												<Helper class="pl-6">Some helpful instruction goes over here.</Helper>
+											  </DropdownItem>
+											  <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+												<Checkbox checked>Enable 2FA auth</Checkbox>
+												<Helper class="pl-6">Some helpful instruction goes over here.</Helper>
+											  </DropdownItem>
+											  <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+												<Checkbox>Subscribe newsletter</Checkbox>
+												<Helper class="pl-6">Some helpful instruction goes over here.</Helper>
+											  </DropdownItem>
+											</ul>
+										  </Dropdown> -->
+											<!-- <DropDown links={link.items} title={link.title} /> -->
 										{:else}
 											<a class="font-semibold" href="{link.link}">{link.title}</a>
 										{/if}
