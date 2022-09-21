@@ -17,12 +17,32 @@ export const obp = writable({
 	navigation: {
 		links: [
 			{
-				title: 'Product',
+				title: 'Products',
 				items: [
-					{ icon: 'faFileLines', title: 'One Contract', path: '/ ', help: 'dadasdasd' },
-					{ icon: 'faFileLines', title: 'One Finance', path: '/ ', help: 'dsadsaddsad' },
-					{ icon: 'faFileLines', title: 'One Resume', path: '/ ', help: 'dsadsda' },
-					{ icon: 'faFileLines', title: 'One Text', path: '/ ', help: 'dasdadasd' }
+					{
+						icon: 'contract',
+						title: 'One Contract',
+						path: '/ ',
+						help: 'Extract key terms, counterparties, dates and other data from contracts'
+					},
+					{
+						icon: 'finance',
+						title: 'One Finance',
+						path: '/ ',
+						help: 'Get visibility on your cashflows, payables and receivables by bulk parsing invoices and receipts'
+					},
+					{
+						icon: 'resume',
+						title: 'One Resume',
+						path: '/ ',
+						help: 'Your resume pile as a searchable, filterable, sortable, database'
+					},
+					{
+						icon: 'text',
+						title: 'One Text',
+						path: '/ ',
+						help: 'Convert scanned business documents to text'
+					}
 				]
 			},
 			{

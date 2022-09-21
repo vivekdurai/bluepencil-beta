@@ -132,7 +132,7 @@
 							v1
 						</button>
 					</div>
-					<nav class="text-sm ml-4 flex-none leading-6 text-gray-600">
+					<nav class="text-base ml-4 flex-none leading-6 text-gray-600">
 						<ul class="flex space-x-8">
 								{#each props.navigation.links as link}
 									<li>
@@ -146,11 +146,17 @@
 						</ul>
 					</nav>
 					<div class="relative lg:flex ml-auto">
-						<nav class="text-xs leading-6 font-semibold text-black">
-							<ul class="flex space-x-8">
+						<nav class="text-sm leading-6 font-semibold text-black">
+							<ul class="flex space-x-4">
 								<li>
 									<a
-										class="rounded-md text-slate-600 hover:bg-sky-200 hover:text-sky-900 bg-slate-100 py-2 px-8 dark:text-sky-500 hover:text-black-500 dark:hover:text-black-400"
+										class="rounded-md font-semibold text-green-600 hover:bg-green-300 hover:text-sky-900 bg-green-100 py-3 px-8 hover:text-black "
+										href="/login">Request a demo</a
+									>
+								</li>
+								<li>
+									<a
+										class="rounded-md font-semibold text-purple-600 hover:bg-purple-200 hover:text-sky-900 bg-purple-100 py-3 px-8 hover:text-black "
 										href="/login">Sign In</a
 									>
 								</li>
