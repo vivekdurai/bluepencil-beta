@@ -22,7 +22,7 @@ export const obp = writable({
 					{
 						icon: 'contract',
 						title: 'One Contract',
-						path: '/ ',
+						path: '/products/one-contract ',
 						help: 'Extract key terms, counterparties, dates and other data from contracts'
 					},
 					{

@@ -56,7 +56,7 @@
 				hover:bg-green-500
 				hover:text-white
 				"
-				href="/">Request a demo</a
+				href="https://calendly.com/obp-one/30min">Request a demo</a
 			>
 
 				<a
