@@ -3,10 +3,10 @@
 	import Documents from '$lib/Documents.svelte';
 </script>
 
-<div class="mt-20 z-40 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50">
+<div class="mt-20 z-40 w-full flex-none transition-colors duration-500 lg:z-50">
 	<div class="max-w-8xl mx-auto">
 		<div class="py-4 border-slate-900 lg:px-8 border-0 dark:border-slate-300 mx-4 lg:mx-0">
-
+dsdsd
 		</div>
 	</div>
 </div>

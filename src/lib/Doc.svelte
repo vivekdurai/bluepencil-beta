@@ -61,12 +61,12 @@
 </script>
 
 <div
-	class="h-screen flex bg-slate-400/20">
-	<div class="absolute overflow-hidden">
+	class="flex ">
+	<div class="absolute bg-slate-100/20 overflow-hidden">
 		<div
-		class="fixed break-all top-12 left-[70px] bottom-0 w-[180px]  bg-slate-100/20 rounded-sm m-2 mt-4 p-4 py-0">
+		class="fixed bg-slate-200/20 break-all top-12 left-[70px] bottom-0 w-[200px]">
 		{#if $activeDocumentStore.filename}
-			<div class="p-0 mt-0 rounded-sm">
+			<div class="p-4 mt-0 rounded-sm">
 				<div class="text-sm tracking-tight font-bold">
 					{$activeDocumentStore.filename}
 				</div>
@@ -79,7 +79,7 @@
 		{/if}
 		</div>
 		<div
-		class="fixed break-all overflow-y-scroll  top-0 left-[270px] border bg-slate-300/20 border-slate-200 bg-slate-50 right-64 bottom-0 mt-4 px-3">
+		class="fixed break-all overflow-y-scroll top-10 left-[270px] bg-slate-300/20 border-slate-200 bg-slate-50 right-64 bottom-0 py-2 px-2">
 
 			<div class="flex py-4">
 				<div class="flex flex-1 flex-col">

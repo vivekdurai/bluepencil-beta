@@ -25,9 +25,7 @@
 {#if !$userStore}
 	<DefaultLanding {obp} />
 {:else}
-	<div class="flex">
-		<div class="flex flex-wrap flex-grow flex-shrink-1 basis-40">
-			<LoggedInHome {userStore} />
-		</div>
+	<div class="absolute left-[71px] right-0 top-[70px] bottom-0">
+		<LoggedInHome {userStore} />
 	</div>
 {/if}

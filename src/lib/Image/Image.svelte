@@ -14,17 +14,9 @@
     let h;
     let container;
     const img = new Image();
-    // let selecto = [];
     import Paragraph from '$lib/Paragraph.svelte';
-    // import Selecto from "selecto";
 
     import { getElementInfo } from "moveable";
-import VanillaSelecto, {
-    OPTIONS,
-    PROPERTIES,
-    EVENTS,
-    CLASS_NAME
-  } from "selecto";
 
   import {
     onMount,
@@ -43,23 +35,6 @@ import VanillaSelecto, {
     return selecto;
   }
 
-  beforeUpdate(() => {
-    if (!selecto) {
-      return;
-    }
-    const nextOptions = {};
-
-    PROPERTIES.forEach(name => {
-      nextOptions[name] = $$props[name];
-
-      if (options[name] !== nextOptions[name]) {
-        selecto[name] = nextOptions[name];
-      }
-    });
-
-    options = nextOptions;
-  });
-
 
   onMount(() => {
 
@@ -70,7 +45,7 @@ import VanillaSelecto, {
 
             headers.append('Authorization', `Bearer ${localStorage.token}`);
             // for (let step = 0; step < page.ocr.length; step++) {
-            //     selecto.push(step);
+                // selecto.push(step);
             // }
 
             // console.log(page.ocr);
@@ -108,73 +83,21 @@ import VanillaSelecto, {
 		};   
 
 
-    OPTIONS.forEach(name => {
-      if (name in $$props) {
-        options[name] = $$props[name];
-      }
-    });
 
-    
-    // selecto = new VanillaSelecto({
-    //   ...options,
-    //   portalContainer: container
-    // });
 
        const elements = [...document.querySelectorAll(".target")];
+       const elementindex = [];
+       for (let step = 0; step < elements.length; step++) {
+                elementindex.push(step);
+            }
         // console.log('elements', elements);
 
-        let selecto = new VanillaSelecto({
-            // getElementRect: getElementInfo,
-            // The container to add a selection element
-            container: container,
-            // Selecto's root container (No transformed container. (default: null)
-            rootContainer: container,
-            // The area to drag selection element (default: container)
-            dragContainer: null,
-            // Targets to select. You can register a queryselector or an Element.
-            selectableTargets: elements,
-            // Whether to select by click (default: true)
-            selectByClick: true,
-            // Whether to select from the target inside (default: true)
-            selectFromInside: true,
-            // After the select, whether to select the next target with the selected target (deselected if the target is selected again).
-            continueSelect: false,
-            // Determines which key to continue selecting the next target via keydown and keyup.
-            toggleContinueSelect: "shift",
-            // The container for keydown and keyup events
-            keyContainer: window,
-            // The rate at which the target overlaps the drag area to be selected. (default: 100)
-            hitRate: 100,
-        });
-
-        console.log(selecto);
-
-        selecto.on("select", e => {
-            e.added.forEach(el => {
-                el.classList.add("selected");
-            });
-            e.removed.forEach(el => {
-                el.classList.remove("selected");
-            });
-        }); 
-
-    EVENTS.forEach((name, i) => {
-      selecto.on(name, e => {
-        const result = dispatch(name, e);
-
-        if (result === false) {
-          e.stop();
-        }
-      });
-    });
-  });
-  onDestroy(() => {
-    selecto && selecto.destroy();
   });
 
 
 
 </script>
+
 
 <div bind:clientWidth={w} bind:clientHeight={h}>
     <img src={base64Image} {alt} class="mb-10 mx-auto flex border border-slate-200" class:loaded bind:this={thisImage} loading="lazy" />

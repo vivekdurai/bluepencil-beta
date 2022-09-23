@@ -25,7 +25,7 @@
 				Accelerate Contracts
 			</h1>
 			<div class="mt-3 text-xl font-light text-slate-600 font-normal text-center mb-10">
-				<p class="mx-auto w-6/12">Accelerate sales, buying, hiring and other critical business functions with a <span class="border-b pb-2 border-slate-300">document intelligence platform <span class="bg-yellow-100">built for humans.</span></span></p>
+				<p class="mx-auto w-6/12">Automate your contracts, control costs and reduce negotiation times.</p>
 			</div>
 		</div>
 
