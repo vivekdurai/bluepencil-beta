@@ -32,6 +32,15 @@ import Doc from './Doc.svelte';
     $documentStore = [...$documentStore, document];
    	};
 
+	async function deleteDocument(document_id){
+		$documentStore = $documentStore.filter(doc => doc.id !== document_id).reverse();
+	}
+
+	async function handleDeleteDocument(document){
+		console.log(document);
+		const response = await api.del(`documents/`+document.id, localStorage.getItem('token'));
+	}
+
 	async function getDocuments() {
 		const response = await api.get(`documents/`, localStorage.getItem('token'));
 		if (!response.errors) {
@@ -44,19 +53,26 @@ import Doc from './Doc.svelte';
 
 		// Connection opened
 		socket.addEventListener('open', function (event) {
-			console.log("It's open");
+			console.log("Listening to Documents");
 		});
 
 		// Listen for messages
 		socket.addEventListener('message', function (event) {
-			let row = JSON.parse(event.data);
+			console.log(event.data);
+			var b = event.data.replace(/'/g, '"');
+			let row = JSON.parse(b);
 			console.log('row', row, row.action);
-      if (row.action == 'addfile'){
-        console.log('row after', row)
-			addToDocuments(row);} 
-      if (row.action == 'updatefile'){
-			updateDocuments(row);} 
+			if (row.action == 'addfile'){
+				console.log('row after', row)
+					addToDocuments(row);} 
+			if (row.action == 'updatefile'){
+					updateDocuments(row);
+				}
+			if (row.action == 'removefile'){
+				deleteDocument(row.id);
+			}
 		});
+
 
 		// documentStore.subscribe((currentMessage) => {
 		// 	message = [...messages, currentMessage];
@@ -89,129 +105,68 @@ import Doc from './Doc.svelte';
 	}
 </script>
 
-<div class="py-0">
-	<div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4">
+<div
+class=" bg-[#EDF2F7] break-all">
+<div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 pt-0">
 		<div class="inline-block min-w-full border-1 border-slate-300 p-0 rounded-md overflow-hidden">
-			<table class="min-w-full border border-gray-100 leading-normal">
-				<thead>
-					<tr class="border-b border-gray-100">
-						<th
-							class="px-5 py-5 border-b-1 w-[200px] border-r border-gray-100 bg-white/90 text-left text-xs font-light text-gray-700 uppercase tracking-wider"
-						>
-							File Name
-						</th>
-						<th
-							class="px-5 py-5 border-b-1 border-r border-gray-100 bg-white/90 text-left text-xs font-light text-gray-700 uppercase tracking-wider"
-						>
-							Size
-						</th>
-						<th
-							class="px-5 py-5 border-b-1 border-r border-gray-100 bg-white/90 text-left text-xs font-light text-gray-700 uppercase tracking-wider"
-						>
-							File Format
-						</th>
-						<th
-							class="px-5 py-5 border-b-1 border-r border-gray-100 bg-white/90 text-left text-xs font-light text-gray-700 uppercase tracking-wider"
-						>
-							Added
-						</th>
-						<th
-							class="px-5 py-5 border-b-1  border-r border-gray-100 bg-white/90 text-left text-xs font-light text-gray-700 uppercase tracking-wider"
-						>
-							Status
-						</th>
-						<th class="px-5 py-5 border-1 border-r border-gray-100 bg-white/90" />
-					</tr>
-				</thead>
+			<div class="min-w-full border border-gray-100 leading-normal">
+				<div>
+
+				</div>
         {#if $documentStore.length == 0}
-        <tbody></tbody>
+        <div></div>
         {:else}
-				<tbody class="mt-2">
+				<div class="mt-2">
 					{#each $documentStore.reverse() as document, i}
-						<tr class="even:bg-white odd:bg-white hover:bg-white border-b border-gray-100 last-of-type:border-0">
-							<td class="px-5 p4 w-[200px] truncate border-r border-gray-100 text-sm">
+					<div class="inline-block m-5 rounded-sm shadow-sm hover:shadow:lg border border-gray-200">
+						<div class=" bg-white p-4 py-2 w-[240px] hover:bg-white  last-of-type:border-0">
+							<div class="flex w-[200px] truncate text-sm">
+								<div class="flex pt-1">
+								{#if document.content_type=='application/vnd.openxmlformats-officedocument.wordprocessingml.document'}
+								<div class="flex-shrink-0 w-15 h-20">
+									<Fa icon={faFileWord} secondaryOpacity={1} class="text-sky-700 text-xl mt-2" />
+								</div>
+								{/if}
+								{#if document.content_type=='application/msword' }
+								<div class="flex-shrink-0 w-15 h-20">
+									<Fa icon={faFileWord} secondaryOpacity={1} class="text-sky-600 text-xl mt-2" />
+								</div>
+								{/if}
+								{#if document.content_type=='application/pdf'}
+								<div class="flex-shrink-0 w-15 h-20">
+									<Fa icon={faFilePdf} secondaryOpacity={1} class="text-red-900 text-xl mt-2" />
+								</div>
+								{/if}
+								</div>
+
 								<a href="/documents/{document.id}" class="flex">
-									{#if document.content_type=='application/vnd.openxmlformats-officedocument.wordprocessingml.document'}
-									<div class="flex-shrink-0 w-5 h-10">
-										<Fa icon={faFileWord} secondaryOpacity={1} class="text-sky-700 text-xl mt-2" />
-									</div>
-									{/if}
-									{#if document.content_type=='application/msword' }
-									<div class="flex-shrink-0 w-5 h-10">
-										<Fa icon={faFileWord} secondaryOpacity={1} class="text-sky-600 text-xl mt-2" />
-									</div>
-									{/if}
-									{#if document.content_type=='application/pdf'}
-									<div class="flex-shrink-0 w-5 h-10">
-										<Fa icon={faFilePdf} secondaryOpacity={1} class="text-slate-400 text-xl mt-2" />
-									</div>
-									{/if}
 									<div class="ml-3 mt-2">
-										<p class="text-sky-600 break-all whitespace-no-wrap">
+										<p class="text-blue-800 font-normal text-base break-all whitespace-no-wrap">
 											{document.filename}
 										</p>
+										<div class="bg-transparent text-sm">
+											<span class="text-gray-500 whitespace-no-wrap">{formatBytes(document.size)}</span>
+											{#if document.content_type=='application/msword' }Word document{/if}
+												{#if document.content_type=='application/vnd.openxmlformats-officedocument.wordprocessingml.document'}Word document{/if}	
+												{#if document.content_type=='application/pdf'}PDF document{/if}	
+										</div>
+										
+										<div class=" bg-transparent text-sm">
+											<span
+												class="relative inline-block font-normal leading-tight"
+											>
+											<p class="text-gray-500 whitespace-no-wrap">
+												Added <TimeAgo src={document.created_at} /> 
+											</p>
+										</div>
 									</div>
 								</a>
-							</td>
+								
+							</div>
                             
-							<td class="px-5 py-4 border-r border-gray-100 bg-transparent text-sm">
-								<p class="text-gray-500 whitespace-no-wrap">{formatBytes(document.size)}</p>
-								<!-- <p class="text-gray-600 whitespace-no-wrap">bytes</p> -->
-							</td>
-							<td class="px-5 py-4 border-r border-gray-100 bg-transparent text-sm">
-								<p class="text-gray-500 whitespace-no-wrap">{document.content_type}</p>
-								<!-- <p class="text-gray-600 whitespace-no-wrap">Due in 3 days</p> -->
-							</td>
-							<td class="px-5 py-4 border-r border-gray-100 bg-transparent text-sm">
-								<span
-									class="relative inline-block px-3 py-1 font-normal leading-tight"
-								>
-                <p class="text-gray-500 whitespace-no-wrap">
-									<TimeAgo src={document.created_at} /> 
-								</p>
-							</td>
-							<td class="px-5 py-4 w-48 border-r border-gray-100 bg-transparent text-sm">
-                {#if document.images_extracted == true }
-                  {#if document.ocr_complete == true }
-                    {#if document.ner_complete == true}
-                    Parse complete
-                    {:else}
-                    <span
-                    class="relative inline-block px-2 py-0 font-semibold text-slate-300 leading-tight"
-                  >
-                  <span class="flex rounded-full h-1 w-3">
-                    <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-sky-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-300"></span>
-                  </span>
-                  </span> 
-                  <span class="text-slate-400 text-xs align-top">Extracting Information</span> 
-               
-                    {/if}
-                  {:else}
-                  <span
-									class="relative inline-block px-2 py-0 font-semibold text-slate-300 leading-tight"
-								>
-                <span class="flex rounded-full h-1 w-3">
-                  <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-sky-400 opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-300"></span>
-                </span>
-								</span> 
-                <span class="text-slate-400 text-xs align-top">Recognizing Text</span> 
-                  {/if}
 
-                {:else}
-								<span
-									class="relative inline-block px-2 py-0 font-semibold text-slate-300 leading-tight"
-								>
-                <span class="flex rounded-full h-1 w-3">
-                  <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-sky-400 opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-300"></span>
-                </span>
-								</span> 
-                <span class="text-slate-400 text-xs align-top">Converting</span> 
-                {/if}
-							</td>
-							<td class="px-5 py-4 border-r border-gray-100 bg-transparent text-sm text-right">
+							
+							<div class="px-5 hidden py-4 border-r border-gray-100 bg-transparent text-sm text-right">
 								<button type="button" class="inline-block text-gray-500 hover:text-gray-700">
 									<svg class="inline-block h-6 w-6 fill-current" viewBox="0 0 24 24">
 										<path
@@ -219,13 +174,61 @@ import Doc from './Doc.svelte';
 										/>
 									</svg>
 								</button>
-							</td>
-						</tr>
+							</div>
+						</div>
+
+						<div class="flex px-2 py-2 border-r border-gray-100 bg-slate-100 text-sm">
+
+							<div class="flex pt-1">
+								{#if document.images_extracted == true }
+									{#if document.ocr_complete == true }
+										{#if document.ner_complete == true}
+										Parse complete
+										{:else}
+										<span class="relative inline-block px-2 py-0 font-semibold text-slate-300 leading-tight">
+											<span class="flex rounded-full h-1 w-3">
+												<span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-sky-400 opacity-75"></span>
+												<span class="relative inline-flex rounded-full h-3 w-3 bg-sky-300"></span>
+											</span>
+										</span> 
+										<span class="text-slate-600 text-xs align-top">Extracting Information</span> 					
+										{/if}
+
+									{:else}
+									<span class="relative inline-block px-2 py-0 font-semibold text-slate-300 leading-tight">
+										<span class="flex rounded-full h-1 w-3">
+										<span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-orange-400 opacity-75"></span>
+										<span class="relative inline-flex rounded-full h-3 w-3 bg-orange-300"></span>
+										</span>
+									</span> 
+
+									<span class="text-slate-600 text-xs align-top">Recognizing Text</span> 
+									{/if}
+
+								{:else}
+								<span class="relative inline-block px-2 py-0 font-semibold text-slate-300 leading-tight">
+									<span class="flex rounded-full h-1 w-3">
+									<span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-sky-400 opacity-75"></span>
+									<span class="relative inline-flex rounded-full h-3 w-3 bg-sky-300"></span>
+									</span>
+								</span> 
+								<span class="text-slate-600 text-xs align-top">Converting</span> 
+								{/if}
+							</div>
+
+						<div class="flex-grow text-right">
+							<span on:click={handleDeleteDocument(document)} class="cursor-pointer text-xs">delete</span>
+						</div>
+
+						</div>
+
+					</div>
 					{/each}
 
-				</tbody>
+					</div>
         {/if}
-			</table>
+		
+				</div>
 
       {#if $documentStore.length == 0}
       <div class="h-screen bg-slate-400/20 border border-slate-100 mt-2 w-auto">

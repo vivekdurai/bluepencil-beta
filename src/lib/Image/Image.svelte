@@ -100,7 +100,7 @@
 
 
 <div bind:clientWidth={w} bind:clientHeight={h}>
-    <img src={base64Image} {alt} class="mb-10 mx-auto flex border border-slate-200" class:loaded bind:this={thisImage} loading="lazy" />
+    <img src={base64Image} {alt} class="mb-10 shadow-[0_5px_35px_-15px_rgba(0,0,0,0.2)] mx-auto flex border rounded-md border-slate-200" class:loaded bind:this={thisImage} loading="lazy" />
 
     {#key selecto}
     {#if page.ocr}

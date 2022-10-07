@@ -7,7 +7,8 @@ const config = {
 	theme: {
 		extend: {
 			fontFamily: {
-				serif: ['Oregano', 'ui-serif', 'Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif']
+				serif: ['Oregano', 'ui-serif', 'Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'],
+				sans: ['Rajdhani', 'Helvetica', 'Arial', 'sans-serif']
 			}
 		}
 	},

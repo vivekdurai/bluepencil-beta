@@ -1,12 +1,26 @@
 <script>
+    export let userStore;
 	import FileUploader from '$lib/FileUploader.svelte';
 	import Documents from '$lib/Documents.svelte';
 </script>
+<script context="module">
+	export async function load({ userStore }) {
+		if (userStore == undefined) {
+			return {
+				status: 302,
+				redirect: '/login'
+			};
+		}
 
-<div class="mt-20 z-40 w-full flex-none transition-colors duration-500 lg:z-50">
-	<div class="max-w-8xl mx-auto">
-		<div class="py-4 border-slate-900 lg:px-8 border-0 dark:border-slate-300 mx-4 lg:mx-0">
-dsdsd
-		</div>
+		return {};
+	}
+</script>
+	<div class="fixed bg-[#EDF2F7] top-12 overflow-auto  left-[70px] bottom-0 right-0">
+		
+			<div class="p-2 pb-0">
+				<FileUploader />
+			</div>
+			<div class="">
+				<Documents />
+			</div>
 	</div>
-</div>

@@ -6,10 +6,12 @@
 	import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 	import {
 		faFileLines,
+		faSignOut,
 		faFilePdf,
 		faFileContract,
 		faFileWord,
 		faFileText,
+		faCog,
 		faFileCode
 	} from '@fortawesome/free-solid-svg-icons';
 
@@ -18,16 +20,21 @@
 {#if $userStore}
 
 <div
-		class="fixed flex top-0 h-[50px] z-40 w-full border-slate-200 border-b  bg-white flex-none lg:z-50"
+		class="fixed flex top-0 h-[50px] z-40 w-full border-sky-800/20 border-b  bg-white flex-none lg:z-50"
 	>
-		<a href="/" class="flex py-2 pb-3 top-0 z-60 bg-white left-0 border-r px-[18px]">
-			<svg width="32" height="34" viewBox="0 0 32 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M18.5349 11.603H15.887L12.3566 13.8017V16.2752L15.887 13.8017V24.795H18.5349V11.603Z" fill="black"/>
-				<path d="M2.56605 11.7121C3.27067 10.496 4.9068 9.65115 4.9068 9.65115C4.9068 9.65115 4.16644 10.1373 3.92703 11.3421C3.68762 12.5468 3.82944 15.0725 3.82944 15.0725C3.82944 15.0725 4.04753 17.8623 5.61594 22.2794C6.35683 24.366 8.18622 28.1336 9.92846 29.0846C11.6707 30.0355 13.3802 29.8557 17.5394 29.0098L21.3502 27.9738C21.3502 27.9738 22.7112 27.6038 25.0848 26.6736C27.4583 25.7434 28.1987 25.2572 28.1987 25.2572C28.1987 25.2572 27.6625 25.9125 27.5346 26.0076C27.4067 26.1026 26.7648 26.9855 24.0288 28.1003C21.2927 29.2151 19.7498 29.5485 19.7498 29.5485C16.9043 30.3221 13.8564 31.3072 10.8869 31.3882C7.88789 31.4701 5.26827 29.2118 3.43833 22.8714C2.61833 20.0303 0.819352 14.7266 2.56605 11.7121Z" fill="#2D0A44"/>
-				<path d="M11.6569 5.1748C11.6569 5.1748 19.6177 2.44617 23.0907 5.28884C33.4541 6.46785 28.6632 11.2276 26.9409 14.9247C27.9853 18.2185 28.444 20.2836 26.7414 17.8836C26.1748 17.0849 26.4146 16.0544 26.9409 14.9247C26.2052 12.6045 25.1789 9.67455 24.4128 7.26597C24.1431 6.41816 23.6819 5.77277 23.0907 5.28884C20.4039 4.98317 16.6985 4.91818 11.6569 5.1748Z" fill="black"/>
-				</svg>
-				
-				
+		<a href="/" class="flex py-1 pt-2 pb-3 top-0 z-60 bg-white border-r border-gray-300 -ml-[2px] left-0 px-[16px] pr-[13px]">
+			<svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M20.5503 0L17.2178 20.399H23.7818L20.5503 0Z" fill="#40478A"/>
+							<path d="M20.5503 41L17.2178 20.601H23.7818L20.5503 41Z" fill="#40478A"/>
+							<path d="M40.9985 20.5004L20.5995 17.1678V23.7319L40.9985 20.5004Z" fill="#40478A"/>
+							<path d="M0 20.5004L20.399 17.1678V23.7319L0 20.5004Z" fill="#40478A"/>
+							<path d="M20.4382 9.57678L18.6768 20.3587H22.1462L20.4382 9.57678Z" fill="white"/>
+							<path d="M20.4382 31.2468L18.6768 20.4649H22.1462L20.4382 31.2468Z" fill="white"/>
+							<path d="M31.2468 20.4109L20.4649 18.6495V22.119L31.2468 20.4109Z" fill="white"/>
+							<path d="M9.57678 20.4109L20.3587 18.6495V22.119L9.57678 20.4109Z" fill="white"/>
+							<path d="M26.4081 11.8087L26.4276 11.8148L26.4469 11.8214C28.0017 12.3488 29.1042 13.4704 29.5643 15.0593C29.9264 16.2885 30.0533 18.181 30.0533 20.5124C30.0533 22.8256 29.9256 24.7069 29.5622 25.9349C29.0949 27.5142 27.9809 28.6083 26.4469 29.1287L26.4276 29.1353L26.4081 29.1414C25.0656 29.5665 23.0542 29.7202 20.591 29.7202C18.0952 29.7202 16.0585 29.5722 14.7546 29.1353C13.1947 28.6358 12.0008 27.5684 11.5175 25.9349C11.1541 24.7069 11.0263 22.8256 11.0263 20.5124C11.0263 18.1811 11.1533 16.2886 11.5154 15.0594C11.9933 13.4091 13.1829 12.3124 14.7738 11.8087C16.1163 11.3836 18.1277 11.2299 20.591 11.2299C23.0542 11.2299 25.0656 11.3836 26.4081 11.8087Z" stroke="#373D76" stroke-width="4"/>
+							<path d="M26.7399 12.7561L26.7529 12.7597L26.766 12.7635C28.2367 13.1947 29.3649 14.1246 29.8569 15.594C30.2547 16.7601 30.4008 18.5874 30.4008 20.881C30.4008 23.1559 30.2539 24.9719 29.855 26.1369C29.3572 27.5908 28.2212 28.4984 26.766 28.925L26.7529 28.9288L26.7399 28.9324C25.3656 29.3084 23.2112 29.4626 20.4169 29.4626C17.5699 29.4626 15.3985 29.3119 14.0809 28.9289C12.5856 28.5165 11.3738 27.6301 10.8625 26.1369C10.4636 24.9719 10.3168 23.1559 10.3168 20.881C10.3168 18.5875 10.4629 16.7602 10.8606 15.5941C11.3675 14.0805 12.5768 13.1713 14.0939 12.7561C15.4681 12.3801 17.6226 12.226 20.4169 12.226C23.2112 12.226 25.3656 12.3801 26.7399 12.7561Z" stroke="white" stroke-width="3"/>
+							</svg>
 		</a>
 		<div class="flex flex-grow">
 			<div class="p-2 lg:px-2 flex flex-grow dark:border-slate-300 mx-0 lg:mx-0">
@@ -41,30 +48,21 @@
 								<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-6 h-6"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
 							  </button>
 							</span>
-							<input type="search" name="q" class="py-2 lg:w-[750px] md:w-[500px] sm:w-[340px] text-sm text-white bg-white border border-slate-200 rounded-md pl-10 focus:outline-none focus:bg-white focus:text-gray-900" placeholder="Search..." autocomplete="off">
+							<input type="search" name="q" class="py-2 lg:w-[950px] md:w-[500px] sm:w-[340px] text-sm text-white bg-slate-100/70 border border-slate-300 rounded-sm pl-10 focus:outline-none focus:bg-white focus:text-gray-900" placeholder="Search..." autocomplete="off">
 						  </div>
 						</form>
 					  </div>
 					
 					<div class="relative flex-grow">
-						<nav class="text-sm float-right inline-block leading-6 font-semibold text-black">
+						<nav class="text-sm float-right border-left border-slate-100 inline-block leading-6 font-semibold text-black">
 							<ul class="flex">
 									
 									<li>
 										<span
 											class="text-xs text-sky-900/80 font-normal font- p-0.5 py-0 px-0 m-0 -mt-1"
-											>{$userStore.email}</span
+											>Signed in as {$userStore.email}</span
 										>
-									</li>
-									<li>
-										<a
-											class=""
-											href="/logout"
-										>
-											<span class="text-xs  text-sky-900/80 font-normal font- p-0.5 py-0 px-2 m-2 -mt-1">Sign out</span><Fa class="mt-1 text-xs inline-block text-sky-500/90 dark:text-sky-500 hover:text-black-500 dark:hover:text-black-400" icon={faArrowRightFromBracket} />
-										</a>
-									</li>
-								
+									</li>								
 							</ul>
 						</nav>
 					</div>
@@ -96,32 +94,50 @@
 	</div>
 
 	<div
-	class="fixed top-12 bottom-[0px] z-40 right-auto  w-[69px] border-slate-200 border-r  bg-white flex-none lg:z-50"
+	class="fixed top-12 bottom-[0px] z-40 right-auto  w-[69px]  border-r border-gray-300  bg-white flex-none lg:z-50"
 >
-<a href="/documents" class="flex px-5 py-2">
-	<Fa icon={faFileLines} secondaryOpacity={1} class="text-sky-900 text-3xl mt-2" />
-</a>
-<a href="/contracts" class="flex px-5 py-2">
-	<Fa icon={faFileContract} secondaryOpacity={1} class="text-sky-900 text-3xl mt-2" />
+<a href="/documents" class="flex px-6 py-2">
+	<Fa icon={faFileLines} secondaryOpacity={1} class="text-gray-600 text-xl mt-2" />
 </a>
 
 
 </div>	
+<div
+class="fixed bottom-5 h-auto z-40 right-auto left-0 w-[68px] border-slate-600  bg-white flex-none lg:z-50"
+>
+<a href="/settings" class="flex px-6 py-2">
+	<Fa icon={faCog} secondaryOpacity={1} class="text-gray-600 text-xl mt-2" />
+</a>
 
+<a href="/logout" class="flex px-6 py-2">
+	<Fa icon={faSignOut} secondaryOpacity={1} class="text-gray-600 text-xl mt-2" />
+</a>
+</div>
 {:else}
 	<div
-		class="fixed w-full h-18 backdrop-blur bg-white/20 border-gray-200 flex-none transition-colors duration-500 z-50"
+		class="w-full h-18 backdrop-blur bg-white/20 border-gray-200 flex-none transition-colors duration-500 z-50"
 	>
-		<div class="max-w-8xl mx-auto">
+		<div class="max-w-7xl mx-auto">
 			<div class="py-4 border-slate-900 lg:px-8 border-0 dark:border-slate-300 mx-4 lg:mx-0">
 				<div class="relative flex items-center">
-					<a class="mr-3 flex-none overflow-hidden" href="/">
+					<a class="mr-6 flex-none overflow-hidden" href="/">
 						<span class="sr-only font-extrabold">{props.company.title}</span>
-						<svg width="32" height="34" viewBox="0 0 32 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M18.5349 11.603H15.887L12.3566 13.8017V16.2752L15.887 13.8017V24.795H18.5349V11.603Z" fill="black"/>
-							<path d="M2.56605 11.7121C3.27067 10.496 4.9068 9.65115 4.9068 9.65115C4.9068 9.65115 4.16644 10.1373 3.92703 11.3421C3.68762 12.5468 3.82944 15.0725 3.82944 15.0725C3.82944 15.0725 4.04753 17.8623 5.61594 22.2794C6.35683 24.366 8.18622 28.1336 9.92846 29.0846C11.6707 30.0355 13.3802 29.8557 17.5394 29.0098L21.3502 27.9738C21.3502 27.9738 22.7112 27.6038 25.0848 26.6736C27.4583 25.7434 28.1987 25.2572 28.1987 25.2572C28.1987 25.2572 27.6625 25.9125 27.5346 26.0076C27.4067 26.1026 26.7648 26.9855 24.0288 28.1003C21.2927 29.2151 19.7498 29.5485 19.7498 29.5485C16.9043 30.3221 13.8564 31.3072 10.8869 31.3882C7.88789 31.4701 5.26827 29.2118 3.43833 22.8714C2.61833 20.0303 0.819352 14.7266 2.56605 11.7121Z" fill="#2D0A44"/>
-							<path d="M11.6569 5.1748C11.6569 5.1748 19.6177 2.44617 23.0907 5.28884C33.4541 6.46785 28.6632 11.2276 26.9409 14.9247C27.9853 18.2185 28.444 20.2836 26.7414 17.8836C26.1748 17.0849 26.4146 16.0544 26.9409 14.9247C26.2052 12.6045 25.1789 9.67455 24.4128 7.26597C24.1431 6.41816 23.6819 5.77277 23.0907 5.28884C20.4039 4.98317 16.6985 4.91818 11.6569 5.1748Z" fill="black"/>
+						<svg class="inline-block -mt-[8px]" width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M20.5503 0L17.2178 20.399H23.7818L20.5503 0Z" fill="#08C"/>
+							<path d="M20.5503 41L17.2178 20.601H23.7818L20.5503 41Z" fill="#08C"/>
+							<path d="M40.9985 20.5004L20.5995 17.1678V23.7319L40.9985 20.5004Z" fill="#08C"/>
+							<path d="M0 20.5004L20.399 17.1678V23.7319L0 20.5004Z" fill="#08C"/>
+							<path d="M20.4382 9.57678L18.6768 20.3587H22.1462L20.4382 9.57678Z" fill="#08C"/>
+							<path d="M20.4382 31.2468L18.6768 20.4649H22.1462L20.4382 31.2468Z" fill="#08C"/>
+							<path d="M31.2468 20.4109L20.4649 18.6495V22.119L31.2468 20.4109Z" fill="#08C"/>
+							<path d="M9.57678 20.4109L20.3587 18.6495V22.119L9.57678 20.4109Z" fill="#08C"/>
+							<path d="M26.4081 11.8087L26.4276 11.8148L26.4469 11.8214C28.0017 12.3488 29.1042 13.4704 29.5643 15.0593C29.9264 16.2885 30.0533 18.181 30.0533 20.5124C30.0533 22.8256 29.9256 24.7069 29.5622 25.9349C29.0949 27.5142 27.9809 28.6083 26.4469 29.1287L26.4276 29.1353L26.4081 29.1414C25.0656 29.5665 23.0542 29.7202 20.591 29.7202C18.0952 29.7202 16.0585 29.5722 14.7546 29.1353C13.1947 28.6358 12.0008 27.5684 11.5175 25.9349C11.1541 24.7069 11.0263 22.8256 11.0263 20.5124C11.0263 18.1811 11.1533 16.2886 11.5154 15.0594C11.9933 13.4091 13.1829 12.3124 14.7738 11.8087C16.1163 11.3836 18.1277 11.2299 20.591 11.2299C23.0542 11.2299 25.0656 11.3836 26.4081 11.8087Z" stroke="#08C" stroke-width="4"/>
+							<path d="M26.7399 12.7561L26.7529 12.7597L26.766 12.7635C28.2367 13.1947 29.3649 14.1246 29.8569 15.594C30.2547 16.7601 30.4008 18.5874 30.4008 20.881C30.4008 23.1559 30.2539 24.9719 29.855 26.1369C29.3572 27.5908 28.2212 28.4984 26.766 28.925L26.7529 28.9288L26.7399 28.9324C25.3656 29.3084 23.2112 29.4626 20.4169 29.4626C17.5699 29.4626 15.3985 29.3119 14.0809 28.9289C12.5856 28.5165 11.3738 27.6301 10.8625 26.1369C10.4636 24.9719 10.3168 23.1559 10.3168 20.881C10.3168 18.5875 10.4629 16.7602 10.8606 15.5941C11.3675 14.0805 12.5768 13.1713 14.0939 12.7561C15.4681 12.3801 17.6226 12.226 20.4169 12.226C23.2112 12.226 25.3656 12.3801 26.7399 12.7561Z" stroke="white" stroke-width="3"/>
 							</svg>
+							
+							
+						<div class="inline-block font-bold text-black text-3xl">One</div>
+							
 							
 					</a>
 					<div class="hidden relative">
@@ -142,7 +158,7 @@
 										{#if link.items.length > 0}								
 											<DropDown links={link.items} title={link.title} />
 										{:else}
-											<a class="font-semibold" href="{link.link}">{link.title}</a>
+											<a class="font-semibold text-black" href="{link.link}">{link.title}</a>
 										{/if}
 									</li>
 								{/each}
@@ -153,13 +169,13 @@
 							<ul class="flex space-x-4">
 								<li>
 									<a
-										class="rounded-md font-semibold text-green-600 hover:bg-green-300 hover:text-sky-900 bg-green-100 py-3 px-8 hover:text-black "
+										class="rounded-md font-semibold text-slate-600 hover:bg-blue-300 hover:text-sky-900 bg-slate-100 py-2 px-8 hover:text-black "
 										href="https://calendly.com/obp-one/30min">Request a demo</a
 									>
 								</li>
 								<li>
 									<a
-										class="rounded-md font-semibold text-purple-600 hover:bg-purple-200 hover:text-sky-900 bg-purple-100 py-3 px-8 hover:text-black "
+										class="rounded-md font-semibold text-white hover:bg-blue-200 hover:text-sky-900 bg-blue-600 py-2 px-8 hover:text-black "
 										href="/login">Sign In</a
 									>
 								</li>

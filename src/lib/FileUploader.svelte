@@ -46,7 +46,7 @@
     }
 </script>
 
-	<div class="relative max-w-8xl mx-auto">
+	<div class="relative bg-slate-200 w-full mx-auto">
 		<FilePond
 			bind:this={pond}
 			{name}

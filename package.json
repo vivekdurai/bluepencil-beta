@@ -61,6 +61,7 @@
 		"svelte-moveable": "^0.27.1",
 		"svelte-selecto": "^1.20.2",
 		"svelte-seo": "^1.4.1",
+		"svrollbar": "^0.12.0",
 		"ws": "^8.8.1"
 	}
 }
