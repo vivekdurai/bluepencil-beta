@@ -55,5 +55,5 @@
 	{/if}
 </PageTransition>
 {#if !loading}
-<!-- <Footer {userStore} /> -->
+<Footer props={$obp} {userStore} />
 {/if}

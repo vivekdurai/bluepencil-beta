@@ -42,7 +42,7 @@
 						</div>
 						<div class="flex-grow">
 							<h2 class="font-semibold text-base text-black">{link.title}</h2>
-							<p class="w-[200px] mt-1 text-xs font-normal">{link.help}</p>
+							<p class="w-[200px] mt-1 text-sm text-black font-normal">{link.help}</p>
 						</div>
 						</a
 					>

@@ -49,8 +49,8 @@ export const obp = writable({
 			{
 				title: 'Solutions',
 				items: [
-					{ icon: 'faFileLines', title: 'Sales teams', path: '/ ', help: 'One can accelerate sales by helping you close contracts more quickly' },
-					{ icon: 'faFileLines', title: 'Finance teams', path: '/ ', help: 'dasdadasd' },
+					{ icon: 'faFileLines', title: 'Sales teams', path: '/solutions-sales-teams', help: 'One can accelerate sales by helping you close contracts more quickly' },
+					{ icon: 'faFileLines', title: 'Finance teams', path: '/solutions-finance-teams ', help: 'dasdadasd' },
 					{ icon: 'faFileLines', title: 'Legal teams', path: '/ ', help: 'dasdadasd' },
 					{ icon: 'faFileLines', title: 'Procurement teams', path: '/ ', help: 'dasdadasd' },
 					{ icon: 'faFileLines', title: 'HR teams', path: '/ ', help: 'dasdadasd' }
