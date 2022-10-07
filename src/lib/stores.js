@@ -49,7 +49,7 @@ export const obp = writable({
 			{
 				title: 'Solutions',
 				items: [
-					{ icon: 'faFileLines', title: 'Sales teams', path: '/ ', help: 'dasdadasd' },
+					{ icon: 'faFileLines', title: 'Sales teams', path: '/ ', help: 'One can accelerate sales by helping you close contracts more quickly' },
 					{ icon: 'faFileLines', title: 'Finance teams', path: '/ ', help: 'dasdadasd' },
 					{ icon: 'faFileLines', title: 'Legal teams', path: '/ ', help: 'dasdadasd' },
 					{ icon: 'faFileLines', title: 'Procurement teams', path: '/ ', help: 'dasdadasd' },
@@ -59,15 +59,35 @@ export const obp = writable({
 			{
 				title: 'Resources',
 				items: [
-					{ icon: 'faFileLines', title: 'API Documentation', path: '/ ', help: 'dasdadasd' },
-					{ icon: 'faFileLines', title: 'How-tos', path: '/ ', help: 'dasdadasd' }
+					{
+						icon: 'faFileLines',
+						title: 'API Documentation',
+						path: '/ ',
+						help: 'We have built this from the ground up as developer-first tool. Get started with using our RESTful API'
+					},
+					{
+						icon: 'faFileLines',
+						title: 'How-tos',
+						path: '/ ',
+						help: 'Look up helpful tutorials posts by our product team to get you started'
+					}
 				]
 			},
 			{
 				title: 'About',
 				items: [
-					{ icon: 'faFileLines', title: 'Company', path: '/ ', help: 'dasdadasd' },
-					{ icon: 'faFileLines', title: 'Careers', path: '/ ', help: 'dasdadasd' }
+					{
+						icon: 'faFileLines',
+						title: 'Company',
+						path: '/ ',
+						help: 'More information about OneBigPicture, the company that built One'
+					},
+					{
+						icon: 'faFileLines',
+						title: 'Careers',
+						path: '/ ',
+						help: 'Join us in building a next-generation AI tool that can change how companies do business'
+					}
 				]
 			}
 		]
