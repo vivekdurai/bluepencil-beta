@@ -15,6 +15,7 @@
 	} from '@fortawesome/free-solid-svg-icons';
 
   import TimeAgo from '$lib/TimeAgo.svelte';
+  
 import Doc from './Doc.svelte';
 	let message;
 	let messages = [];
@@ -217,7 +218,14 @@ class=" bg-[#EDF2F7] break-all">
 							</div>
 
 						<div class="flex-grow text-right">
-							<span on:click={handleDeleteDocument(document)} class="cursor-pointer text-xs">delete</span>
+							<ul>
+								<li>
+									<span on:click={handleDeleteDocument(document)} class="cursor-pointer text-xs">delete</span>
+								</li>
+								<li>
+									<a href="{base_url}/documents/{document.id}/pdf?token={localStorage.token}" class="cursor-pointer text-xs">download</a>
+								</li>
+							</ul>
 						</div>
 
 						</div>

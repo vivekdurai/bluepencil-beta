@@ -22,15 +22,16 @@
 				text-center
 				 dark:text-black"
 			>
-				When contracts become meaningful
+				See what's coming.
 			</h1>
 			<div class="mt-3 text-2xl font-light text-slate-600 font-normal text-center mb-14">
-				<p class="mx-auto font-medium w-6/12">Accelerate sales, buying, hiring and other critical business functions with a <span class="pb-2 border-slate-200">contract intelligence platform <span class="bg-white">built for humans.</span></span></p>
+				<p class="mx-auto font-medium w-6/12">Stay one step ahead of the curve with deeper business intelligence <span class="pb-2 border-slate-200">about your industry <span class="bg-yellow-100">peers, partners and competitors.</span></span></p>
+				<p class="mx-auto hidden font-medium w-6/12">Accelerate sales, buying, hiring and other critical business functions with a <span class="pb-2 border-slate-200">contract intelligence platform <span class="bg-white">built for humans.</span></span></p>
 			</div>
 			<div class="text-center align-center items-center space-x-2 text-sm">
 				<a
 				class="text-lg focus:outline-none focus:ring-2 focus:ring-sky-400 
-				focus:ring-offset-2 focus:ring-offset-slate-50 bg-blue-600
+				focus:ring-offset-2 focus:ring-offset-slate-50 bg-black
 				 text-white
 				 font-bold
 				 px-10
@@ -43,11 +44,11 @@
 				hover:bg-blue-700
 				hover:text-white
 				"
-				href="https://calendly.com/obp-one/30min">Request a demo</a
+				href="/sign-up">Start free trial</a
 			>
 
 				<a
-					class="text-lg focus:outline-none focus:ring-2 focus:ring-sky-400 
+					class="text-lg hidden focus:outline-none focus:ring-2 focus:ring-sky-400 
 					focus:ring-offset-2 focus:ring-offset-slate-50 bg-slate-200
 					 text-black
 					 border-white border
