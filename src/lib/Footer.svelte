@@ -35,12 +35,12 @@
 							>
 						</li>
 						<li class="inline-block">
-							<a class="hover:text-slate-900 dark:hover:text-slate-300" href="/terms"
+							<a class="hover:text-slate-900 dark:hover:text-slate-300" href="/privacy-policy"
 								>Privacy Policy</a
 							>
 						</li>
 						<li class="inline-block">
-							<a class="hover:text-slate-900 dark:hover:text-slate-300" href="/terms"
+							<a class="hover:text-slate-900 dark:hover:text-slate-300" href="mailto:team@obp.one"
 								>Email us</a
 							>
 						</li>

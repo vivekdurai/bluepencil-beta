@@ -166,16 +166,22 @@ class="fixed bottom-5 h-auto z-40 right-auto left-0 w-[68px] border-slate-600  b
 					</nav>
 					<div class="relative lg:flex ml-auto">
 						<nav class="text-sm leading-6 font-semibold text-black">
-							<ul class="flex space-x-4">
+							<ul class="flex space-x-1">
 								<li>
 									<a
-										class="rounded-md font-semibold text-slate-600 hover:bg-blue-300 hover:text-sky-900 bg-slate-100 py-2 px-8 hover:text-black "
+										class="rounded-md font-semibold text-slate-600 hover:text-white bg-white py-2 px-2 hover:text-black "
+										href="/pricing">Pricing</a
+									>
+								</li>
+								<li>
+									<a
+										class="rounded-md font-semibold text-sky-600  hover:text-white bg-white py-2 px-2 hover:text-black "
 										href="https://calendly.com/obp-one/30min">Start free trial</a
 									>
 								</li>
 								<li>
 									<a
-										class="rounded-md font-semibold text-white hover:bg-blue-200 hover:text-sky-900 bg-gray-900 py-2 px-8 hover:text-black "
+										class="rounded-md font-semibold text-sky-600  hover:text-sky-900 bg-white py-2 px-2 hover:text-black "
 										href="/login">Sign In</a
 									>
 								</li>

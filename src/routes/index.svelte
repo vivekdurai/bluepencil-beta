@@ -22,10 +22,4 @@
 <svelte:head>
 	<title>{$obp.company.title}: {$obp.company.description}</title>
 </svelte:head>
-{#if !$userStore}
 	<DefaultLanding {obp} />
-{:else}
-	<div class="absolute left-[71px] right-0 top-[70px] bottom-0">
-		<LoggedInHome {userStore} />
-	</div>
-{/if}
